@@ -248,7 +248,12 @@ main{overflow-x:clip}
 .comparador .tag{position:absolute;top:12px;font:500 .7rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:rgba(0,0,0,.6);padding:7px 9px;border-radius:2px;pointer-events:none}
 .comparador .tag.a{left:12px}.comparador .tag.d{right:12px}
 .legenda{margin-top:12px;color:var(--cinza);font-size:.95rem}
-.aviso-fotos{margin-top:28px;font-size:.9rem;color:var(--cinza);border-left:3px solid var(--vermelho);padding-left:14px}
+.ver-insta{display:flex;justify-content:center;margin-top:36px}
+.ver-insta .btn{transition:transform .15s,background .15s,border-color .15s}
+.ver-insta .btn svg{width:20px;height:20px;flex:none}
+.ver-insta .seta{transition:transform .15s}
+.ver-insta .btn:hover .seta{transform:translateX(4px)}
+.ver-insta .btn:hover,.ver-insta .btn:focus-visible{background:var(--vermelho);border-color:var(--vermelho);color:#fff}
 
 /* orçamento / OS */
 .orcamento .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
@@ -387,6 +392,14 @@ footer a:hover{color:var(--branco)}
 @media (max-width:900px){.rod-grade{grid-template-columns:1fr 1fr}.rod-marca{grid-column:1/-1}}
 @media (max-width:520px){.rod-grade{grid-template-columns:1fr;gap:32px;padding-block:48px 36px}}
 
+/* versão web (desktop): tipografia um pouco menor */
+@media (min-width:861px){
+  html{font-size:93.75%}
+  body{font-size:16px}
+  h2{font-size:clamp(2.2rem,4.2vw,3.4rem)}
+  h3{font-size:1.45rem}
+  .fase{font-size:clamp(2.8rem,5.6vw,5.2rem)}
+}
 </style>
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -541,7 +554,12 @@ footer a:hover{color:var(--branco)}
         <figcaption class="legenda">Capô queimado de sol · polimento</figcaption>
       </figure>
     </div>
-    <p class="aviso-fotos">Mais trabalhos no nosso Instagram: <a href="https://www.instagram.com/recuperadorafastcar/" target="_blank" rel="noopener">@recuperadorafastcar</a></p>
+    <div class="ver-insta">
+      <a class="btn btn-linha" href="https://www.instagram.com/recuperadorafastcar/" target="_blank" rel="noopener" aria-label="Ver mais trabalhos no Instagram @recuperadorafastcar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Ver mais no Instagram <span class="seta" aria-hidden="true">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
